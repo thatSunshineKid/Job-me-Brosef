@@ -1,4 +1,12 @@
 JobMeBrosef::Application.routes.draw do
+  root :to => 'static_pages#home'
+
+  get "static_pages/about"
+
+  get "static_pages/cover_letter_tips"
+
+  get "static_pages/helpful_links"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
