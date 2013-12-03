@@ -1,4 +1,10 @@
 JobMeBrosef::Application.routes.draw do
+  resources :job_applications
+
+
+  resources :users
+
+
   root :to => 'static_pages#home'
 
   get "static_pages/about"

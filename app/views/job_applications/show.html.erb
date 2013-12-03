@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company name:</b>
+  <%= @job_application.company_name %>
+</p>
+
+<p>
+  <b>Job title:</b>
+  <%= @job_application.job_title %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @job_application.contact %>
+</p>
+
+<p>
+  <b>Cover letter completed:</b>
+  <%= @job_application.cover_letter_completed %>
+</p>
+
+<p>
+  <b>Resume completed:</b>
+  <%= @job_application.resume_completed %>
+</p>
+
+<p>
+  <b>Cover letter and resume sent:</b>
+  <%= @job_application.cover_letter_and_resume_sent %>
+</p>
+
+<p>
+  <b>Company response:</b>
+  <%= @job_application.company_response %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @job_application.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_application_path(@job_application) %> |
+<%= link_to 'Back', job_applications_path %>
