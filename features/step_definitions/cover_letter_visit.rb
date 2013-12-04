@@ -7,7 +7,7 @@ When /^they click the link to visit the cover letter page$/ do
 	visit '/static_pages/cover_letter_tips'
 end
 
-Then /^they should (not)?see "(.*)"$/ do |waffle, content|
+Then /^they should(n't)? see "(.*?)"$/ do |waffle, content|
 	if waffle
 		page.should_not have_content(content)
 	else
@@ -16,6 +16,14 @@ Then /^they should (not)?see "(.*)"$/ do |waffle, content|
 end
 
 When /^they are not on the cover letter page$/ do
+	visit '/static_pages/about'
+end
+
+When /^they click the link to visit the helpful links page$/ do
+	visit '/static_pages/helpful_links'
+end
+
+When /^they are not on the helpful links page$/ do
 	visit '/static_pages/about'
 end
 

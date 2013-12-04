@@ -8,4 +8,4 @@ Feature: Visit Cover Letter
 	Scenario: Unsuccessful Visit
 		Given a user visits the home page
 		When they are not on the cover letter page
-		Then they should not see "the purpose of this page is to give you tips on writing a cover letter"
+		Then they shouldn't see "the purpose of this page is to give you tips on writing a cover letter"
