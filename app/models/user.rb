@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :password
+  attr_accessible :name, :password, :password_confirmation
   validates :name, presence: true, length: { maximum: 20}, uniqueness: { case_sensitive: false }
 
   validates :password, presence: true, length: { minimum: 6}
