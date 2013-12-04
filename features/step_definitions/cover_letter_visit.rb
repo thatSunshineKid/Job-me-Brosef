@@ -1,5 +1,4 @@
 
-
 Given /^a user visits the home page$/ do
 	visit '/'
 end
@@ -13,6 +12,7 @@ Then /^they should (not)? see "(.*?)"$/ do |content|
 		 page.should_not have_content(content)
 	else
 		page.should have_content(content)
+	end
 end
 
 When /^they are not on the cover letter page$/ do
