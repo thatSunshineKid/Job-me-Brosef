@@ -8,7 +8,7 @@ When /^they click the link to visit the cover letter page$/ do
 end
 
 Then /^they should(not)? see "(.*?)"$/ do |not, content|
-	if not
+	if (not)
 		page.should_not have_content(content)
 	else
 		page.should have_content(content)
