@@ -9,7 +9,7 @@ end
 
 Then /^they should (not)? see "(.*?)"$/ do |content|
 	if not
-		 page.should_not have_content(content)
+		page.should_not have_content(content)
 	else
 		page.should have_content(content)
 	end
