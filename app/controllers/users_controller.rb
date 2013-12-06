@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -41,11 +43,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @job_applications = User.job_applications(params[:user_id])
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        format.html { redirect_to @job_applications, notice: 'User was successfully created.' }
+        format.json { render json: @job_applications, status: :created, location: @job_applications }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
