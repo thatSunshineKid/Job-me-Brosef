@@ -1,6 +1,7 @@
 JobMeBrosef::Application.routes.draw do
   resources :job_applications
-
+ 
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :users
 
