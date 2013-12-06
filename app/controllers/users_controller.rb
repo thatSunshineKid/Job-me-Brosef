@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @job_applications = User.job_applications(params[:user_id])
+    @job_applications = User.job_applications
 
     respond_to do |format|
       if @user.save
