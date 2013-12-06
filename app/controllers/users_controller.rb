@@ -36,7 +36,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
   end
 
   # POST /users
@@ -87,9 +86,8 @@ class UsersController < ApplicationController
       end
     end
 
-    def current_user
+    def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-  end
 end
