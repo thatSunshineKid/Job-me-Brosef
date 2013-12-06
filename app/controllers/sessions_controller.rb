@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-	user = User.where(:name => params[:session][:name])
+	user = User.find_by_name(params[:session][:name])
 	if user && user.authenticate(params[:session][:password])
 	  sign_in user
 	  redirect_to user
