@@ -44,7 +44,8 @@ class JobApplicationsController < ApplicationController
     @job_application = current_user.job_applications.build(params[:job_application])
     if @job_application.save
       flash[:success] = "Job Application created!"
-      redirect_to @
+      redirect_to job_applications_path
+    end
   end
 
   # PUT /job_applications/1
