@@ -1,37 +1,39 @@
 <h1>Listing job_applications</h1>
+<% if @user.job_applications.any? %>
+  <table>
+    <tr>
+      <th>Company name</th>
+      <th>Job title</th>
+      <th>Contact</th>
+      <th>Cover letter completed</th>
+      <th>Resume completed</th>
+      <th>Cover letter and resume sent</th>
+      <th>Company response</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Company name</th>
-    <th>Job title</th>
-    <th>Contact</th>
-    <th>Cover letter completed</th>
-    <th>Resume completed</th>
-    <th>Cover letter and resume sent</th>
-    <th>Company response</th>
-    <th>Notes</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @job_applications.each do |job_application| %>
-  <tr>
-    <td><%= job_application.company_name %></td>
-    <td><%= job_application.job_title %></td>
-    <td><%= job_application.contact %></td>
-    <td><%= job_application.cover_letter_completed %></td>
-    <td><%= job_application.resume_completed %></td>
-    <td><%= job_application.cover_letter_and_resume_sent %></td>
-    <td><%= job_application.company_response %></td>
-    <td><%= job_application.notes %></td>
-    <td><%= link_to 'Show', job_application %></td>
-    <td><%= link_to 'Edit', edit_job_application_path(job_application) %></td>
-    <td><%= link_to 'Destroy', job_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <% @user.job_applications.each do |job_application| %>
+    <tr>
+      <td><%= job_application.company_name %></td>
+      <td><%= job_application.job_title %></td>
+      <td><%= job_application.contact %></td>
+      <td><%= job_application.cover_letter_completed %></td>
+      <td><%= job_application.resume_completed %></td>
+      <td><%= job_application.cover_letter_and_resume_sent %></td>
+      <td><%= job_application.company_response %></td>
+      <td><%= job_application.notes %></td>
+      <td><%= link_to 'Show', job_application %></td>
+      <td><%= link_to 'Edit', edit_job_application_path(job_application) %></td>
+      <td><%= link_to 'Destroy', job_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <h3>You currently have no job applications created yet.</h3>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Job application', new_job_application_path %>

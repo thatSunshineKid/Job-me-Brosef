@@ -1,4 +1,5 @@
 class JobApplicationsController < ApplicationController
+  before_filter :signed_in_user
   # GET /job_applications
   # GET /job_applications.json
   def index
@@ -40,17 +41,10 @@ class JobApplicationsController < ApplicationController
   # POST /job_applications
   # POST /job_applications.json
   def create
-    @job_application = JobApplication.new(params[:job_application])
-
-    respond_to do |format|
-      if @job_application.save
-        format.html { redirect_to @job_application, notice: 'Job application was successfully created.' }
-        format.json { render json: @job_application, status: :created, location: @job_application }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @job_application.errors, status: :unprocessable_entity }
-      end
-    end
+    @job_application = current_user.job_applications.build(params[:job_application])
+    if @job_application.save
+      flash[:success] = "Job Application created!"
+      redirect_to @
   end
 
   # PUT /job_applications/1
