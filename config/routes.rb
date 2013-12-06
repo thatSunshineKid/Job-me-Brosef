@@ -5,11 +5,11 @@ JobMeBrosef::Application.routes.draw do
 
   resources :users
 
-  match '/signup', to: 'users#new',  via: 'get'
+  match '/signup', to: 'users#new',
 
-  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signin',  to: 'sessions#new'
   
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/signout', to: 'sessions#destroy', via: [:delete, :get]
 
 
   root :to => 'static_pages#home'
