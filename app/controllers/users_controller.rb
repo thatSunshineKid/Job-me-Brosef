@@ -47,9 +47,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @job_applications = @user.job_applications
-        format.html { redirect_to @job_applications, notice: 'User was successfully created.' }
-        format.json { render json: @job_applications, status: :created, location: @job_applications }
+        format.html { redirect_to job_applications_path, notice: 'User was successfully created.' }
+        format.json { render json: job_applications_path, status: :created, location: job_applications_path }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
