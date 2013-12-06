@@ -31,9 +31,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = 'Welcome to the job thing!'
+      flash.now[:success] = 'Welcome to the job thing!'
       redirect_to @user
     else
+      flash.now[:error] = 'invalid username/password'
       render 'new'
     end
   end
