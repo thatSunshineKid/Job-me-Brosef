@@ -1,5 +1,4 @@
 <h1>Listing job_applications</h1>
-<% if @user.job_applications.any? %>
   <table>
     <tr>
       <th>Company name</th>
@@ -31,9 +30,6 @@
     </tr>
   <% end %>
   </table>
-<% else %>
-  <h3>You currently have no job applications created yet.</h3>
-<% end %>
 <br />
 
 <%= link_to 'New Job application', new_job_application_path %>
