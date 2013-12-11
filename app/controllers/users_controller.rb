@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash.now[:success] = 'Welcome to the job thing!'
-      redirect_to @user
+      redirect_to job_applications_path
     else
       flash.now[:error] = 'invalid username/password'
       render 'new'
