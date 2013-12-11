@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe StaticPagesController do
+describe StaticPagesController, :type => :controller do
   it "works for cover letter page" do
     get("/cover_letter_tips").should route_to("static_pages#cover_letter_tips")
   end
