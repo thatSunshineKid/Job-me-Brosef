@@ -5,7 +5,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = current_user
+    if signed_in?
+      @user = current_user
+    else
+      flash.now[:error] = 'Pleas sign in first.'
+      redirect_to signin_url
+    end
   end
 
   # GET /users/1
