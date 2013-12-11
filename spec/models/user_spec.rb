@@ -12,8 +12,7 @@ describe User do
   end
   it "should not have any jobs to start" do
   	user = User.new(name: 'bob')
-  	jobs = user.job_applications.all
-  	jobs.count should_match(0)
+  	user.job_applications.count.should == 0
   end
 
 end
