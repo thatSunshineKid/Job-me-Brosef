@@ -1,5 +1,5 @@
-require 'spec_helper'
-
-describe JobApplication do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe User do
+  it "has a name that matches 'Anna'" do
+    user = User.new(name: 'Anna')
+    user.name.should match(/Anna /)	
 end
