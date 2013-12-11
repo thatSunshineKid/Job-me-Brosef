@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if signed_in?
+    if current_user != nil
       @user = current_user
     else
       flash.now[:error] = 'Pleas sign in first.'
