@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <h2> <%= link_to "Signup", controller: "users", action: "new" %></h2>
   <h2> <%= link_to "Sign in", signin_path %></h2>
-  <h2> <%= redirect_to "Sign out", controller: "sessions", action: "destroy" %></h2>
+  <h2> <%= link_to "Signout", controller: "sessions", action: "destroy" %></h2>
 
 </head>
 <body>
