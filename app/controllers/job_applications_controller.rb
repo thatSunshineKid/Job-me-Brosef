@@ -3,7 +3,7 @@ class JobApplicationsController < ApplicationController
   # GET /job_applications
   # GET /job_applications.json
   def index
-    if current_user?
+    if current_user?(current_user)
       @job_applications = current_user.job_applications.all
     else
       @job_applications = nil
