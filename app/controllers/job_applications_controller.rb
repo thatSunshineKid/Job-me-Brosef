@@ -28,7 +28,7 @@ class JobApplicationsController < ApplicationController
   # GET /job_applications/new
   # GET /job_applications/new.json
   def new
-    @job_application = JobApplication.new
+    @job_application = current_user.job_applications.new
 
     respond_to do |format|
       format.html # new.html.erb
