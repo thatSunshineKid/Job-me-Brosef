@@ -1,7 +1,6 @@
 class Waffle < ActiveRecord::Migration
   def up
-  end
-
-  def down
+ 	sql = "ALTER TABLE job_applications ALTER COLUMN user_id SET DATA TYPE integer;"
+ 	ActiveRecord::Base.connection.execute(sql)
   end
 end
