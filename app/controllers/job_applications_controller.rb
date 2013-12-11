@@ -3,7 +3,7 @@ class JobApplicationsController < ApplicationController
   # GET /job_applications
   # GET /job_applications.json
   def index
-    @job_applications = JobApplication.all
+    @job_applications = current_user.job_applications.all
 
     respond_to do |format|
       format.html # index.html.erb
