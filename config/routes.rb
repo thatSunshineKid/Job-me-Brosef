@@ -11,6 +11,8 @@ JobMeBrosef::Application.routes.draw do
   
   match '/signout', to: 'sessions#destroy', via: [:delete, :get]
 
+  match '/current_user', to: 'users#index'
+
 
   root :to => 'static_pages#home'
 
