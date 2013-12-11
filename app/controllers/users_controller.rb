@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.find(params[:id])
+    @users = User.current_user
   end
 
   # GET /users/1
