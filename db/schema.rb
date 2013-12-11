@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20131206022836) do
     t.string   "notes"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
-    t.string   "user_id"
+    t.integer   "user_id",                     :null => false
   end
 
   create_table "users", :force => true do |t|
