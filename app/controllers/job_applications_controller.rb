@@ -45,6 +45,9 @@ class JobApplicationsController < ApplicationController
     if @job_application.save
       flash[:success] = "Job Application created!"
       redirect_to job_applications_path
+    else
+      flash.now[:error] = 'something went wrong'
+      render 'new'
     end
   end
 

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.find(params[:id])
   end
 
   # GET /users/1
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
       sign_in @user
-      redirect_to @user
+      redirect_to job_applications_path
     else
       render 'edit'
     end
