@@ -1,7 +1,5 @@
 class RemoveJobApplications < ActiveRecord::Migration
-  def up
-  end
-
-  def down
+  def change
+  	drop_table :job_applications
   end
 end
